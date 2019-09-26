@@ -1,0 +1,21 @@
+1568888885 SCI数据  scip
+parser.add_argument('--load_model', type=str, default='False', help='train/test/demo')
+
+parser.add_argument('--window', type=int, default=6, help='#epoch of training')
+parser.add_argument('--batch_size', type=int, default=8, help='#sample of each mini batch')
+parser.add_argument('--epoch', type=int, default=450, help='#epoch of training')
+parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
+parser.add_argument('--clip', type=float, default=5.0, help='gradient clipping')
+parser.add_argument('--keep_prob', type=float, default=0.5, help='dropout keep_prob')
+parser.add_argument('--lstm_layer_num', type=int, default=2, help='lstm layer num')
+
+
+1568894460 福州数据  XH_32_test
+parser.add_argument('--window', type=int, default=12, help='#epoch of training')
+parser.add_argument('--attr_count', type=int, default=12, help='#epoch of training')
+parser.add_argument('--batch_size', type=int, default=8, help='#sample of each mini batch')
+parser.add_argument('--epoch', type=int, default=550, help='#epoch of training')
+parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
+parser.add_argument('--clip', type=float, default=5.0, help='gradient clipping')
+parser.add_argument('--keep_prob', type=float, default=0.5, help='dropout keep_prob')
+parser.add_argument('--lstm_layer_num', type=int, default=2, help='lstm layer num')
