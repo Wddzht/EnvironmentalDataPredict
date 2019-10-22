@@ -21,7 +21,7 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 item_name = ['CO', 'NO2', 'SO2', 'O3', 'PM25', 'PM10']
 N = 6  # 污染物的个数
 tr = 0.7
-data = xlrd.open_workbook(r'E:\_Python\ScipPredictor\EnvironmentalDataPredict\Projection\2Portland2019010618.xlsx')
+data = xlrd.open_workbook(r'E:\_Python\ScipPredictor\EnvironmentalDataPredict\Projection\Fuzhou160032_700.xlsx')
 # data = xlrd.open_workbook('2Portland2019010618.xlsx')
 # 读取数据
 table = data.sheets()[0]  # 通过索引顺序获取

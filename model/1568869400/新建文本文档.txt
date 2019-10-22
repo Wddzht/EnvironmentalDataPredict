@@ -1,7 +1,0 @@
-parser.add_argument('--window', type=int, default=12, help='#epoch of training')
-parser.add_argument('--batch_size', type=int, default=16, help='#sample of each mini batch')
-parser.add_argument('--epoch', type=int, default=4000, help='#epoch of training')
-parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
-parser.add_argument('--clip', type=float, default=5.0, help='gradient clipping')
-parser.add_argument('--keep_prob', type=float, default=0.5, help='dropout keep_prob')
-parser.add_argument('--lstm_layer_num', type=int, default=2, help='lstm layer num')

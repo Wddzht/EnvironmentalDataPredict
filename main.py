@@ -2,11 +2,8 @@
 import argparse
 import os
 import time
-
 import tensorflow as tf
 import math
-import numpy as np
-
 import data
 from model import LSTMPredictor
 
@@ -19,18 +16,19 @@ config.gpu_options.per_process_gpu_memory_fraction = 0.2  # need ~700MB GPU memo
 
 # hyper parameters
 parser = argparse.ArgumentParser(description='LSTM Predictor task')
-parser.add_argument('--data_path', type=str, default=r"E:\_Python\ScipPredictor\data\new_scip.txt",
+parser.add_argument('--data_path', type=str,
+                    default=r"E:\_Python\ScipPredictor\EnvironmentalDataPredict\FittingMap\data\fz_micro.pare.txt",
                     help='train data source')
-parser.add_argument('--output_path', type=str, default=r'E:\_Python\ScipPredictor\model',
+parser.add_argument('--output_path', type=str, default=r'E:\_Python\ScipPredictor\EnvironmentalDataPredict\model',
                     help='output path')
 
 parser.add_argument('--mode', type=str, default='demo', help='train/test/demo')
-parser.add_argument('--model_path', type=str, default=r'E:\_Python\ScipPredictor\model\1568888885',
+parser.add_argument('--model_path', type=str, default=r'E:\_Python\ScipPredictor\EnvironmentalDataPredict\model\1571662098',
                     help='model path for test or demo no /checkpoints')
 parser.add_argument('--load_model', type=str, default='False', help='train/test/demo')
 
 parser.add_argument('--window', type=int, default=6, help='#epoch of training')
-parser.add_argument('--attr_count', type=int, default=13, help='#epoch of training')
+parser.add_argument('--attr_count', type=int, default=12, help='#epoch of training')
 parser.add_argument('--batch_size', type=int, default=8, help='#sample of each mini batch')
 parser.add_argument('--epoch', type=int, default=550, help='#epoch of training')
 parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
@@ -108,6 +106,7 @@ elif args.mode == 'demo':
 
 
     def output_prediction(prediction, target, mse, mae, r2):
+
         for item in prediction:
             for i in range(len(item)):
                 attr = item[i] * (_max[i] - _min[i]) + _min[i]

@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 
 
-def read_str_data(data_path, n_seqs=2, window=12, attr_count=12):
+def read_str_data(data_path, n_seqs, window, attr_count):
     input_file = open(data_path, encoding='utf8')
     data = input_file.readlines()
     seqs_count = len(data) - window - 1
@@ -22,6 +22,8 @@ def read_str_data(data_path, n_seqs=2, window=12, attr_count=12):
         _item = item.split()
         line = []
         i = 0
+        if len(_item) != attr_count:
+            raise ValueError(item)
         for d in _item:
             line.append(float(d))
             if float(d) > max[i]:
